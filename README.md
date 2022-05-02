@@ -6,9 +6,14 @@
 
 * System Requirements:
 
-    AWS CLI (MacOS)
-    AWS CDK (MacOS)
-    Node.js
+    AWS CLI (aws-cli/2.5.2 Python/3.9.11 Darwin/21.4.0 exe/x86_64 prompt/off)
+      - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+    AWS CDK (2.22.0 (build 1db4b16))
+      - https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html
+
+    Node.js (v16.15.0)
+      - https://github.com/nvm-sh/nvm#installing-and-updating
 
     Place key.pem file in home directory for proper IAM access.
 
