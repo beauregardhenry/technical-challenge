@@ -15,6 +15,8 @@
     Node.js (v16.15.0)
       - https://github.com/nvm-sh/nvm#installing-and-updating
 
-    Place key.pem file in home directory for proper IAM access.
+    DoTheDo.sh allows the user to pass an IAM key pair in as a parameter.
+      - Place [your-key].pem file in the app home directory and replace "beau-henry-ec2-key"
+        in DoTheDo.sh with [your-key] for proper IAM access during deployment.
 
 * In the app home directory, launch the EC2 instance using "$ bash DoTheDo.sh"
