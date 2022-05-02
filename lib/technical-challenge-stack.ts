@@ -56,7 +56,7 @@ export class TechnicalChallengeStack extends cdk.Stack {
       securityGroup: techChallengeSG,
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
       machineImage: new ec2.AmazonLinuxImage({ generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2 }),
-      keyName: 'beau-henry',
+      // keyName: 'beau-henry',
     });
 
     // display public IPv4 address for the generated EC2 instance
