@@ -9,7 +9,7 @@ export class TechnicalChallengeStack extends cdk.Stack {
 
     // create configurable variable to be passed to CloudFormation upon deployment
     const ec2KeyPair = new cdk.CfnParameter(this, 'keypair', {
-      type: 'string',
+      type: 'String',
       description: 'EC2 key pair name',
     });
 
