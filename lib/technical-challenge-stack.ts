@@ -7,6 +7,12 @@ export class TechnicalChallengeStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    // create configurable variable to be passed to CloudFormation upon deployment
+    const ec2KeyPair = new cdk.CfnParameter(this, 'keypair', {
+      type: 'string',
+      description: 'EC2 key pair name',
+    });
+
     // create VPC to hold the EC2 instance
     const vpc = new ec2.Vpc(this, 'tech-challenge-vpc', {
       cidr: '10.0.0.0/16',
@@ -56,7 +62,7 @@ export class TechnicalChallengeStack extends cdk.Stack {
       securityGroup: techChallengeSG,
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
       machineImage: new ec2.AmazonLinuxImage({ generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2 }),
-      // keyName: 'beau-henry',
+      keyName: ec2KeyPair.valueAsString,
     });
 
     // display public IPv4 address for the generated EC2 instance
